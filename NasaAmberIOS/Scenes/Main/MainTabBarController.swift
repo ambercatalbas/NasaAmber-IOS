@@ -21,7 +21,14 @@ class MainTabBarController: UITabBarController {
     }
     
     private func createCuriosityViewController() -> UINavigationController {
- 
+        let router = CuriosityRouter()
+        let viewModel = CuriosityViewModel(router: router)
+        let viewController = CuriosityViewController(viewModel: viewModel)
+        let navigationController = MainNavigationController(rootViewController: viewController)
+        
+//        navigationController.tabBarItem.image = .icHome
+        router.viewController = viewController
+        return navigationController
     }
     
     private func createOpportunityViewController() -> UINavigationController {
