@@ -1,0 +1,48 @@
+PODS:
+  - Alamofire (5.5.0)
+  - IQKeyboardManagerSwift (6.5.9)
+  - Kingfisher (6.3.1)
+  - MobilliumBuilders (1.4.0)
+  - QuickLayout (3.0.0)
+  - SwiftEntryKit (1.2.7):
+    - QuickLayout (= 3.0.0)
+  - SwiftGen (6.5.1)
+  - SwiftLint (0.47.0)
+  - TinyConstraints (4.0.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - IQKeyboardManagerSwift (~> 6.5)
+  - Kingfisher (~> 6.3.1)
+  - MobilliumBuilders (~> 1.4)
+  - SwiftEntryKit (~> 1.2)
+  - SwiftGen (~> 6.5)
+  - SwiftLint (~> 0.44)
+  - TinyConstraints (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - MobilliumBuilders
+    - QuickLayout
+    - SwiftEntryKit
+    - SwiftGen
+    - SwiftLint
+    - TinyConstraints
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  MobilliumBuilders: 9990948aea3e132044431289dda869f524fcadac
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
+  SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
+  SwiftLint: d41cc46a2ae58ac6d9f26954bc89f1d72e71fdef
+  TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
+
+PODFILE CHECKSUM: e20a5fafeab7143309bfc2aa21428e298721b91a
+
+COCOAPODS: 1.11.0
