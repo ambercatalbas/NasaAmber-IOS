@@ -7,11 +7,10 @@
 
 import Foundation
 import UIKit
-import MobilliumUserDefaults
 
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = MainTabBarRoute & IntroRoute & SKPhotoBrowserRoute
+    typealias Routes = MainTabBarRoute
     
     static let shared = AppRouter()
     
