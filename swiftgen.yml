@@ -1,0 +1,51 @@
+fonts:
+  inputs: NasaAmberIOS/UIComponents/Resources/Fonts
+  outputs:
+    templateName: swift5
+    output: NasaAmberIOS/UIComponents/Resources/Fonts/Fonts.swift
+    params:
+        publicAccess: public
+
+strings:
+  inputs: NasaAmberIOS/UIComponents/Resources/Strings/en.lproj
+  filter: .+\.strings$
+  outputs:
+    - templateName: structured-swift5
+      output: NasaAmberIOS/UIComponents/Resources/Strings/StringConstants.swift
+      params:
+          publicAccess: public
+
+xcassets:
+  - inputs:
+    - NasaAmberIOS/UIComponents/Resources/Assets/Images.xcassets
+    - NasaAmberIOS/UIComponents/Resources/Assets/Icons.xcassets
+    - NasaAmberIOS/UIComponents/Resources/Assets/Colors.xcassets
+    outputs:
+      - templateName: swift5
+        output: NasaAmberIOS/UIComponents/Resources/Assets/Assets.swift
+        params:
+            publicAccess: public
+              
+  - inputs:
+    - NasaAmberIOS/UIComponents/Resources/Assets/Images.xcassets
+    outputs:
+      - templatePath: NasaAmberIOS/SwiftGenTemplates/images.stencil
+        output: NasaAmberIOS/UIComponents/Resources/Assets/UIImage+Images.swift
+        params:
+            publicAccess: public
+            
+  - inputs:
+    - NasaAmberIOS/UIComponents/Resources/Assets/Icons.xcassets
+    outputs:
+      - templatePath: NasaAmberIOS/SwiftGenTemplates/icons.stencil
+        output: NasaAmberIOS/UIComponents/Resources/Assets/UIImage+Icons.swift
+        params:
+            publicAccess: public
+            
+  - inputs:
+    - NasaAmberIOS/UIComponents/Resources/Assets/Colors.xcassets
+    outputs:
+      - templatePath: NasaAmberIOS/SwiftGenTemplates/colors.stencil
+        output: NasaAmberIOS/UIComponents/Resources/Assets/UIColor+Colors.swift
+        params:
+            publicAccess: public

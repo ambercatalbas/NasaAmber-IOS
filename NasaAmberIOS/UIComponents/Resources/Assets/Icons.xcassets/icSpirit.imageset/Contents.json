@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "rover (1).png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
