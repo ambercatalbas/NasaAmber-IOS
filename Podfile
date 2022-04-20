@@ -1,6 +1,7 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '13.0'
 
+# Comment the next line if you don't want to use dynamic frameworks
 use_frameworks!
 
 workspace 'NasaAmberIOS'
@@ -17,11 +18,11 @@ target 'NasaAmberIOS' do
    
    # Helper
    pod "TinyConstraints", '~> 4.0'
-   pod "IQKeyboardManagerSwift", '~> 6.5'
+   pod 'Segmentio', '~> 4.1'
+   pod 'SwiftGen', '~> 6.5'
    pod 'SwiftLint', '~> 0.44'
    pod 'MobilliumBuilders', '~> 1.4'
-   pod 'Kingfisher', '~> 6.3.1'
-
+  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git', :branch => 'version6-xcode13'
   target 'NasaAmberIOSTests' do
     inherit! :search_paths
     # Pods for testing
@@ -52,22 +53,25 @@ target 'DataProvider' do
   
 end
 
-target 'UIComponents' do
-
-  project 'UIComponents/UIComponents.xcodeproj'
+target 'Utilities' do
   
-  # Pods for UIComponents
+  project 'Utilities/Utilities.xcodeproj'
+  
+  # Pods for Utilities
   
   # Helper
-  pod "TinyConstraints", '~> 4.0'
-  pod 'SwiftGen', '~> 6.5'
-  pod 'MobilliumBuilders', '~> 1.4'
-  pod 'Kingfisher', '~> 6.3.1'
-  pod 'SwiftEntryKit', '~> 1.2'
   
-  target 'UIComponentsTests' do
+  target 'UtilitiesTests' do
     inherit! :search_paths
     # Pods for testing
   end
   
+end
+
+post_install do |installer_representation|
+    installer_representation.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = '$(inherited)'
+        end
+    end
 end

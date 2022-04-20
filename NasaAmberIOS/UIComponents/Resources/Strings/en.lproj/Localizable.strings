@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  UIComponents
+
+  Created by AMBER ÇATALBAŞ on 23.02.2022.
+  
+*/
+
+// MARK: - Curiosity
+"CuriosityController.title" = "Curiosity";
+
+// MARK: - Spirit
+"SpiritController.title" = "Spirit";
+
+// MARK: - Opportunity
+"OpportunityController.title" = "Opportunity";
+
+// MARK: - General
+"General.rover" = "Araç";
