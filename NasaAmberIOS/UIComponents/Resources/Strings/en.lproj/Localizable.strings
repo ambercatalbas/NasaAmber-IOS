@@ -15,5 +15,8 @@
 // MARK: - Opportunity
 "OpportunityController.title" = "Opportunity";
 
+// MARK: - Filter
+"Filter.title" = "Filter";
+
 // MARK: - General
 "General.rover" = "Araç";

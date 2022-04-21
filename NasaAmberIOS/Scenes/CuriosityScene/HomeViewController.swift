@@ -1,5 +1,5 @@
 //
-//  CuriosityViewController.swift
+//  HomeViewController.swift
 //  NasaAmberIOS
 //
 //  Created by AMBER ÇATALBAŞ on 19.04.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CuriosityViewController: BaseViewController<CuriosityViewModel> {
+final class HomeViewController: BaseViewController<HomeViewModel> {
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -20,37 +20,69 @@ final class CuriosityViewController: BaseViewController<CuriosityViewModel> {
         super.viewDidLoad()
         addSubViews()
         configureContents()
+        viewModel.fetchPhotosListingType()
+        subscribeViewModelEvents()
+    }
+    
+    private func subscribeViewModelEvents() {
+        viewModel.didSuccessFetchRecipes = { [weak self] in
+            guard let self = self else { return }
+            self.collectionView.reloadData()
+        }
     }
  
 }
 
 // MARK: - UILayout
-extension CuriosityViewController {
+extension HomeViewController {
     
     private func addSubViews() {
- 
+        view.addSubview(collectionView)
+        collectionView.edgesToSuperview()
     }
    
 }
 
 // MARK: - Configure and Set Localize
-extension CuriosityViewController {
+extension HomeViewController {
     
     private func configureContents() {
-        title = L10n.CuriosityController.title
-        
+        view.backgroundColor = .systemTeal
+        navigationItem.title = viewModel.title
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: .hamburgerIcon, style: .done, target: self, action: #selector(filterButtonTapped))
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
 
     
 }
 
 // MARK: - Actions
-extension CuriosityViewController {
+extension HomeViewController {
     
+    @objc
+    private func filterButtonTapped() {
+        let items = viewModel.roverCameras
+        viewModel.showFilterScene(items: items, delegate: self)
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension HomeViewController {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height && viewModel.isPagingEnabled && viewModel.isRequestEnabled {
+            viewModel.fetchMorePages()
+        }
+    }
 }
 
 // MARK: - UICollectionViewDataSource
-extension CuriosityViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItemsAt(section: section)
@@ -67,7 +99,7 @@ extension CuriosityViewController: UICollectionViewDataSource {
 
 // swiftlint:disable line_length
 // MARK: - UICollectionViewDelegateFlowLayout
-extension CuriosityViewController: UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         .zero
@@ -87,3 +119,11 @@ extension CuriosityViewController: UICollectionViewDelegateFlowLayout {
     
 }
 // swiftlint:enable line_length
+
+// MARK: - FilterViewControllerProtocol
+extension HomeViewController: FilterViewControllerProtocol {
+    func selectedItem(item: String) {
+        viewModel.fetchFilter(filter: "camera=\(item)&")
+    }
+   
+}

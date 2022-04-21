@@ -16,6 +16,11 @@ public enum L10n {
     public static let title = L10n.tr("Localizable", "CuriosityController.title")
   }
 
+  public enum Filter {
+    /// Filter
+    public static let title = L10n.tr("Localizable", "Filter.title")
+  }
+
   public enum General {
     /// Araç
     public static let rover = L10n.tr("Localizable", "General.rover")

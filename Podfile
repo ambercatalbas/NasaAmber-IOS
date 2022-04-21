@@ -22,8 +22,8 @@ target 'NasaAmberIOS' do
    pod 'SwiftGen', '~> 6.5'
    pod 'SwiftLint', '~> 0.44'
    pod 'MobilliumBuilders', '~> 1.4'
-  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git', :branch => 'version6-xcode13'
-  target 'NasaAmberIOSTests' do
+   pod 'Kingfisher', '~> 7.0'
+   target 'NasaAmberIOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

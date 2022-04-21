@@ -1,20 +1,20 @@
 //
-//  CuriosityRoute.swift
+//  HomeRoute.swift
 //  NasaAmberIOS
 //
 //  Created by AMBER ÇATALBAŞ on 16.04.2022.
 //
 
-protocol CuriosityRoute {
-    func placeOnWindowCuriosity()
+protocol HomeRoute {
+    func placeOnWindowCuriosity(rover: RoversType)
 }
 
-extension CuriosityRoute where Self: RouterProtocol {
+extension HomeRoute where Self: RouterProtocol {
     
-    func placeOnWindowCuriosity() {
-        let router = CuriosityRouter()
-        let viewModel = CuriosityViewModel(router: router)
-        let viewController = CuriosityViewController(viewModel: viewModel)
+    func placeOnWindowCuriosity(rover: RoversType) {
+        let router = HomeRouter()
+        let viewModel = HomeViewModel(rover: rover, router: router)
+        let viewController = HomeViewController(viewModel: viewModel)
         let navigationController = MainNavigationController(rootViewController: viewController)
         
         let transition = PlaceOnWindowTransition()

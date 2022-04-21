@@ -51,6 +51,7 @@ public enum Asset {
     public static let icCuriosity = ImageAsset(name: "icCuriosity")
     public static let icOppurtunity = ImageAsset(name: "icOppurtunity")
     public static let icSpirit = ImageAsset(name: "icSpirit")
+    public static let icClose = ImageAsset(name: "ic_close")
     public static let searchIcon = ImageAsset(name: "search-icon")
   }
   public enum Images {
