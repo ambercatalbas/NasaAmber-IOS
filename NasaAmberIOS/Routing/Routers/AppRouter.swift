@@ -17,9 +17,7 @@ final class AppRouter: Router, AppRouter.Routes {
     
     func startApp() {
         if DefaultsKey.isIntroCompleted.value == true {
-            placeOnWindowIntro()
-
-//            placeOnWindowMainTabBar()
+            placeOnWindowMainTabBar()
         } else {
             placeOnWindowIntro()
         }

@@ -25,6 +25,7 @@ target 'NasaAmberIOS' do
    pod 'MobilliumBuilders', '~> 1.4'
    pod 'Kingfisher', '~> 7.0'
    pod 'MobilliumUserDefaults', '~> 2.0'
+   pod 'SwiftEntryKit', '~> 1.2'
 
    target 'NasaAmberIOSTests' do
     inherit! :search_paths

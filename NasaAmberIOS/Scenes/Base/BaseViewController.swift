@@ -7,9 +7,9 @@
 
 import UIKit
 
-class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
-    
-//    typealias LoadingProtocols = LoadingProtocol & ActivityIndicatorProtocol
+class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewController.LoadingProtocols {
+
+    typealias LoadingProtocols = LoadingProtocol & ActivityIndicatorProtocol
     
     var viewModel: V
     
@@ -27,38 +27,39 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appWhite
-//        subscribeLoading()
-//        subscribeActivityIndicator()
-//        subscribeToast()
+        subscribeLoading()
+        subscribeActivityIndicator()
+        subscribeToast()
+
     }
     
-//    private func subscribeActivityIndicator() {
-//        viewModel.showActivityIndicatorView = { [weak self] in
-//            self?.showActivityIndicator()
-//        }
-//        viewModel.hideActivityIndicatorView = { [weak self] in
-//            self?.hideActivityIndicator()
-//        }
-//    }
+    private func subscribeActivityIndicator() {
+        viewModel.showActivityIndicatorView = { [weak self] in
+            self?.showActivityIndicator()
+        }
+        viewModel.hideActivityIndicatorView = { [weak self] in
+            self?.hideActivityIndicator()
+        }
+    }
     
-//    private func subscribeLoading() {
-//        viewModel.showLoading = { [weak self] in
-//            self?.presentLoading()
-//        }
-//        viewModel.hideLoading = { [weak self] in
-//            self?.dismissLoading()
-//        }
-//    }
+    private func subscribeLoading() {
+        viewModel.showLoading = { [weak self] in
+            self?.presentLoading()
+        }
+        viewModel.hideLoading = { [weak self] in
+            self?.dismissLoading()
+        }
+    }
     
-//    private func subscribeToast() {
-//        viewModel.showWarningToast = { text in
-//            ToastPresenter.showWarningToast(text: text)
-//        }
-//    }
+    private func subscribeToast() {
+        viewModel.showWarningToast = { text in
+            ToastPresenter.showWarningToast(text: text)
+        }
+    }
     
-//    func showWarningToast(message: String) {
-//        ToastPresenter.showWarningToast(text: message)
-//    }
+    func showWarningToast(message: String) {
+        ToastPresenter.showWarningToast(text: message)
+    }
     
     #if DEBUG
     deinit {

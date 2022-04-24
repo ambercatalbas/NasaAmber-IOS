@@ -8,26 +8,29 @@
 import Foundation
 
 protocol HomeViewDataSource {
+    
     var roverCameras: [String] { get set }
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> ImageCellProtocol
 }
 
 protocol HomeViewEventSource {
+    
     var didSuccessFetchRecipes: VoidClosure? { get set }
-
+    
 }
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
+    
     func showFilterScene(items: [String], delegate: FilterViewControllerProtocol)
     func fetchFilter(filter: String)
     func fetchMorePages()
     func showDetailScene(photo: Photo)
-
+    
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
-
+    
     var roverCameras: [String]
     var listType: RoversType
     var title: String
@@ -38,7 +41,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     var filter: String = ""
     
     func fetchMorePages() {
-       fetchPhotosListingType()
+        fetchPhotosListingType()
     }
     
     func fetchFilter(filter: String) {
@@ -47,7 +50,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
         cellItems.removeAll()
         fetchPhotosListingType()
     }
-
+    
     func showFilterScene(items: [String], delegate: FilterViewControllerProtocol) {
         router.presentFilter(items: items, delegate: delegate)
     }
@@ -78,7 +81,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
         case .spirit:
             self.roverCameras = RoversType.spirit.cameras()
             self.title = L10n.SpiritController.title
-
+            
         }
         super.init(router: router)
     }
@@ -88,7 +91,7 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
 // MARK: - Network
 // swiftlint:disable line_length
 extension HomeViewModel {
- 
+    
     func fetchPhotosListingType() {
         self.isRequestEnabled = false
         if page == 1 { showActivityIndicatorView?() }
@@ -104,7 +107,8 @@ extension HomeViewModel {
                 self.isPagingEnabled = response.photos.count > 24
                 self.didSuccessFetchRecipes?()
             case .failure(let error):
-                if self.page == 1 { self.showWarningToast?("\(error.localizedDescription) Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.") }
+                self.showWarningToast?("\(error.localizedDescription)")
+                
             }
         }
     }

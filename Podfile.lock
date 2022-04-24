@@ -4,7 +4,10 @@ PODS:
   - lottie-ios (3.3.0)
   - MobilliumBuilders (1.4.0)
   - MobilliumUserDefaults (2.0.0)
+  - QuickLayout (3.0.0)
   - Segmentio (4.1)
+  - SwiftEntryKit (1.2.7):
+    - QuickLayout (= 3.0.0)
   - SwiftGen (6.5.1)
   - SwiftLint (0.47.0)
   - TinyConstraints (4.0.2)
@@ -16,6 +19,7 @@ DEPENDENCIES:
   - MobilliumBuilders (~> 1.4)
   - MobilliumUserDefaults (~> 2.0)
   - Segmentio (~> 4.1)
+  - SwiftEntryKit (~> 1.2)
   - SwiftGen (~> 6.5)
   - SwiftLint (~> 0.44)
   - TinyConstraints (~> 4.0)
@@ -27,7 +31,9 @@ SPEC REPOS:
     - lottie-ios
     - MobilliumBuilders
     - MobilliumUserDefaults
+    - QuickLayout
     - Segmentio
+    - SwiftEntryKit
     - SwiftGen
     - SwiftLint
     - TinyConstraints
@@ -38,11 +44,13 @@ SPEC CHECKSUMS:
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   MobilliumBuilders: 9990948aea3e132044431289dda869f524fcadac
   MobilliumUserDefaults: 002aa4bb663127d2dcc0814c17430c918a1e1445
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
+  SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
   SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
   SwiftLint: d41cc46a2ae58ac6d9f26954bc89f1d72e71fdef
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: 52a27e37144bd58a9d6d5324e93c6b023e616644
+PODFILE CHECKSUM: c8c9cff1451e77e094a4cf02a296672a10cce97e
 
 COCOAPODS: 1.11.0

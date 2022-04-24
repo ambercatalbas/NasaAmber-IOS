@@ -1,8 +1,8 @@
 //
 //  APILogger.swift
-//  Fodamy
+//  DataProvider
 //
-//  Created by AMBER ÇATALBAŞ on 10.03.2022.
+//  Created by AMBER ÇATALBAŞ on 9.03.2022.
 //
 
 import Alamofire
@@ -11,7 +11,7 @@ final class APILogger: EventMonitor {
     
     static let shared = APILogger()
     
-    let queue = DispatchQueue(label: "com.mobillium.sampleproject.networklogger")
+    let queue = DispatchQueue(label: "networklogger")
     
     func request(_ request: Request, didCreateURLRequest urlRequest: URLRequest) {
         print("---> Request Created <---")

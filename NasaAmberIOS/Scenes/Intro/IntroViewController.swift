@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 import MobilliumBuilders
 import TinyConstraints
 import Lottie
@@ -42,7 +41,7 @@ final class IntroViewController: BaseViewController<IntroViewModel> {
         setLocalize()
         
         
-
+        
     }
     
 }
@@ -85,7 +84,7 @@ extension IntroViewController {
     private func addAnimationView() {
         view.addSubview(animationView)
         animationView.animation = Animation.named("rover")
-        animationView.frame = view.bounds
+        animationView.edgesToSuperview()
         animationView.backgroundColor = .white
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
@@ -200,9 +199,8 @@ extension IntroViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height - 100
-//        return CGSize(width: width, height: height )
-
-        return collectionView.frame.size
+        return CGSize(width: width, height: height )
+        
     }
     
 }

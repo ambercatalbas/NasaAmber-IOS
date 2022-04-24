@@ -15,7 +15,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         collectionView.register(ImageCell.self)
         return collectionView
     }()
-    
     private let refreshControl = UIRefreshControl()
     private var loadingFooterView: ActivityIndicatorFooterView?
     
