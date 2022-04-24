@@ -16,6 +16,9 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         return collectionView
     }()
     
+    private let refreshControl = UIRefreshControl()
+    private var loadingFooterView: ActivityIndicatorFooterView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
@@ -97,6 +100,14 @@ extension HomeViewController: UICollectionViewDataSource {
     
 }
 
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let photo = viewModel.cellItemAt(indexPath: indexPath).photo else { return }
+        viewModel.showDetailScene(photo: photo)
+    }
+}
+
 // swiftlint:disable line_length
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
@@ -114,7 +125,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 195)
+        return CGSize(width: UIScreen.main.bounds.width, height: 200)
     }
     
 }

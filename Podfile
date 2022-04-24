@@ -19,10 +19,13 @@ target 'NasaAmberIOS' do
    # Helper
    pod "TinyConstraints", '~> 4.0'
    pod 'Segmentio', '~> 4.1'
+   pod 'lottie-ios'
    pod 'SwiftGen', '~> 6.5'
    pod 'SwiftLint', '~> 0.44'
    pod 'MobilliumBuilders', '~> 1.4'
    pod 'Kingfisher', '~> 7.0'
+   pod 'MobilliumUserDefaults', '~> 2.0'
+
    target 'NasaAmberIOSTests' do
     inherit! :search_paths
     # Pods for testing
@@ -60,7 +63,8 @@ target 'Utilities' do
   # Pods for Utilities
   
   # Helper
-  
+  pod 'MobilliumUserDefaults', '~> 2.0'
+
   target 'UtilitiesTests' do
     inherit! :search_paths
     # Pods for testing

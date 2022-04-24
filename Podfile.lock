@@ -1,7 +1,9 @@
 PODS:
   - Alamofire (5.5.0)
   - Kingfisher (7.2.0)
+  - lottie-ios (3.3.0)
   - MobilliumBuilders (1.4.0)
+  - MobilliumUserDefaults (2.0.0)
   - Segmentio (4.1)
   - SwiftGen (6.5.1)
   - SwiftLint (0.47.0)
@@ -10,7 +12,9 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.4)
   - Kingfisher (~> 7.0)
+  - lottie-ios
   - MobilliumBuilders (~> 1.4)
+  - MobilliumUserDefaults (~> 2.0)
   - Segmentio (~> 4.1)
   - SwiftGen (~> 6.5)
   - SwiftLint (~> 0.44)
@@ -20,7 +24,9 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - lottie-ios
     - MobilliumBuilders
+    - MobilliumUserDefaults
     - Segmentio
     - SwiftGen
     - SwiftLint
@@ -29,12 +35,14 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   MobilliumBuilders: 9990948aea3e132044431289dda869f524fcadac
+  MobilliumUserDefaults: 002aa4bb663127d2dcc0814c17430c918a1e1445
   Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
   SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
   SwiftLint: d41cc46a2ae58ac6d9f26954bc89f1d72e71fdef
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: 4f7910dc989443ae59216a67bbbd7d83a20f07a3
+PODFILE CHECKSUM: 52a27e37144bd58a9d6d5324e93c6b023e616644
 
 COCOAPODS: 1.11.0

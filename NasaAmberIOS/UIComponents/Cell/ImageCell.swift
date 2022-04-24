@@ -42,7 +42,6 @@ extension ImageCell {
         imageView.leftToSuperview().constant = 16
         imageView.rightToSuperview().constant = -16
         imageView.bottomToSuperview().constant = -5
-        imageView.height(100)
         
         
     }

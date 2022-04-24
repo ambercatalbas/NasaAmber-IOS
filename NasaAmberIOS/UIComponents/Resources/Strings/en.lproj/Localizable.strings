@@ -6,6 +6,14 @@
   
 */
 
+// MARK: - WalkThrough
+"Intro.Next" = "Next";
+"Intro.Start" = "Begin!";
+"Intro.firstTitle" = "Welcome to NASA Network!";
+"Intro.secondTitle" = "Photos of NASA vehicles are waiting for you.";
+"Intro.thirdTitle" = "Mars photos are here for you.";
+"Intro.descriptionText" = "This API is designed to collect image data gathered by NASA's Curiosity, Opportunity, and Spirit rovers on Mars and make it more easily available to other developers, educators, and citizen scientists";
+
 // MARK: - Curiosity
 "CuriosityController.title" = "Curiosity";
 
@@ -14,6 +22,15 @@
 
 // MARK: - Opportunity
 "OpportunityController.title" = "Opportunity";
+
+// Mark: - Detail
+"DetailController.earthDate" = "Photo Date:";
+"DetailController.rover" = "Rover:";
+"DetailController.camera" = "Camera:";
+"DetailController.roverStatus" = "Status:";
+"DetailController.launchDate" = "Launch Date:";
+"DetailController.landingDate" = "Landing Date:";
+
 
 // MARK: - Filter
 "Filter.title" = "Filter";

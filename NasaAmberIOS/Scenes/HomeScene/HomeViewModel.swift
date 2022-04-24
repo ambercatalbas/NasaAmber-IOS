@@ -22,10 +22,12 @@ protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
     func showFilterScene(items: [String], delegate: FilterViewControllerProtocol)
     func fetchFilter(filter: String)
     func fetchMorePages()
+    func showDetailScene(photo: Photo)
 
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
+
     var roverCameras: [String]
     var listType: RoversType
     var title: String
@@ -48,6 +50,10 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
 
     func showFilterScene(items: [String], delegate: FilterViewControllerProtocol) {
         router.presentFilter(items: items, delegate: delegate)
+    }
+    
+    func showDetailScene(photo: Photo) {
+        router.presentDetail(photo: photo)
     }
     
     func numberOfItemsAt(section: Int) -> Int {
