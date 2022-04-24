@@ -31,9 +31,9 @@ public enum Asset {
     public static let appGreen = ColorAsset(name: "appGreen")
     public static let appHeather = ColorAsset(name: "appHeather")
     public static let appLineViewColor = ColorAsset(name: "appLineViewColor")
-    public static let appPurple = ColorAsset(name: "appPurple")
     public static let appRaven = ColorAsset(name: "appRaven")
     public static let appRed = ColorAsset(name: "appRed")
+    public static let appSpace = ColorAsset(name: "appSpace")
     public static let appTextFieldBorderColor = ColorAsset(name: "appTextFieldBorderColor")
     public static let appWhite = ColorAsset(name: "appWhite")
     public static let appYellow = ColorAsset(name: "appYellow")
@@ -51,10 +51,13 @@ public enum Asset {
     public static let icCuriosity = ImageAsset(name: "icCuriosity")
     public static let icOppurtunity = ImageAsset(name: "icOppurtunity")
     public static let icSpirit = ImageAsset(name: "icSpirit")
+    public static let icClose = ImageAsset(name: "ic_close")
     public static let searchIcon = ImageAsset(name: "search-icon")
   }
   public enum Images {
     public static let imgCuriosity = ImageAsset(name: "imgCuriosity")
+    public static let imgOpportunity = ImageAsset(name: "imgOpportunity")
+    public static let imgSpirit = ImageAsset(name: "imgSpirit")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

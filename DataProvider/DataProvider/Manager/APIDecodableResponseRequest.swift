@@ -22,7 +22,7 @@ public extension APIDecodableResponseRequest {
 // MARK: - url
 public extension APIDecodableResponseRequest {
     var url: String {
-        return "https://api.nasa.gov/index.html#browseAPI/" + path
+        return "https://api.nasa.gov/mars-photos/api/v1/rovers/" + path
     }
 }
 

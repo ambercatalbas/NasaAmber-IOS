@@ -42,16 +42,16 @@ public extension UIColor {
       return Asset.Colors.appLineViewColor.color
   }
 
-  static var appPurple: UIColor {
-      return Asset.Colors.appPurple.color
-  }
-
   static var appRaven: UIColor {
       return Asset.Colors.appRaven.color
   }
 
   static var appRed: UIColor {
       return Asset.Colors.appRed.color
+  }
+
+  static var appSpace: UIColor {
+      return Asset.Colors.appSpace.color
   }
 
   static var appTextFieldBorderColor: UIColor {

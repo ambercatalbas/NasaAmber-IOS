@@ -46,6 +46,10 @@ public extension UIImage {
       return Asset.Icons.icSpirit.image
   }
 
+  static var icClose: UIImage {
+      return Asset.Icons.icClose.image
+  }
+
   static var searchIcon: UIImage {
       return Asset.Icons.searchIcon.image
   }

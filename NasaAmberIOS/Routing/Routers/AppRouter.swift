@@ -7,15 +7,20 @@
 
 import Foundation
 import UIKit
+import MobilliumUserDefaults
 
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = MainTabBarRoute
+    typealias Routes = MainTabBarRoute & IntroRoute
     
     static let shared = AppRouter()
     
     func startApp() {
+        if DefaultsKey.isIntroCompleted.value == true {
             placeOnWindowMainTabBar()
+        } else {
+            placeOnWindowIntro()
+        }
     }
     
     private func topViewController() -> UIViewController? {
