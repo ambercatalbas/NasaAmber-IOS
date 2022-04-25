@@ -22,7 +22,6 @@
 |![Curiosity](https://user-images.githubusercontent.com/79257297/165060664-ed1b8e55-5ec6-4865-bb0f-8dd442d22f1f.png)|![Opportunity](https://user-images.githubusercontent.com/79257297/165060686-d7bd6b76-973c-40d2-b771-7689fae68a32.png)|![Spirit](https://user-images.githubusercontent.com/79257297/165060749-35f77857-b501-425e-aabe-d1941ba6a86b.png)|![Detail](https://user-images.githubusercontent.com/79257297/165060769-f1f78872-a6e3-432e-aaca-4f9236356104.png)
 
 <br> <br>
-<br> <br>
 
 ## Concepts & Technologies Used
  - Swift
@@ -38,6 +37,4 @@
  - TinyConstraints
  - SwiftGen
  - SwiftLint
-
-
 <br> <br>
